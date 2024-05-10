@@ -12,7 +12,6 @@ controllers.addTodayTodo = async (req, res) => {
     goalId,
     userId,
   } = req.body;
-  console.log('req.body', req.body);
 
   const todayTodo = await TodayTodo.create({
     title,

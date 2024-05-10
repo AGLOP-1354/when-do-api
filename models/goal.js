@@ -1,17 +1,16 @@
 const mongoose  = require('mongoose');
 
-const todayTodoSchema = new mongoose.Schema({
+const goalSchema = new mongoose.Schema({
     userId: { type: String, required: true },
     title: { type: String, required: true },
-    isAlarm: { type: Boolean, required: false },
-    alarmTime: { type: Date, required: false },
+    color: { type: String, required: true },
     isCompleted: { type: Boolean, required: false },
     startDate: { type: Date, required: true },
-    goalId: { type: String, required: false },
+    endDate: { type: Date, required: false },
   },
   {
     timestamps: true
   },
 );
 
-module.exports = mongoose.model('todayTodos', todayTodoSchema);
+module.exports = mongoose.model('goals', goalSchema);
