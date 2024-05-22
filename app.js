@@ -2,6 +2,7 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 const express = require('express');
 const routes = require('./routes');
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -14,9 +15,16 @@ mongoose
   .then(() => console.log('Successfully connected to mongodb'))
   .catch((e) => console.error(e));
 
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  next();
+});
+
+app.use(express.urlencoded( {extended : false } ));
+app.use(bodyParser.json());
+
 app.use('/', routes);
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

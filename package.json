@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.24.5",
     "babel-node": "^0.0.1-security",
     "body-parser": "^1.20.2",
+    "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongodb": "4.15",

@@ -3,8 +3,7 @@ const controllers = require('./controllers');
 
 const router = express.Router();
 
-router.post('/add', controllers.addGoal);
-router.post('/update', controllers.updateGoal);
-router.get('/:userId', controllers.getGoalList);
+router.post('/add', controllers.addRoutine);
+router.get('/:userId', controllers.getRoutineList);
 
 module.exports = router;

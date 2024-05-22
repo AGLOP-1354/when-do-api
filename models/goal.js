@@ -7,6 +7,7 @@ const goalSchema = new mongoose.Schema({
     isCompleted: { type: Boolean, required: false },
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: false },
+    deletedAt: { type: Date, required: false },
   },
   {
     timestamps: true
